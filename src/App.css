@@ -1,0 +1,372 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(20px + 4vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  main > section {
+    animation: none;
+  }
+
+  main > section.motion-section {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 700ms ease, transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  main > section.motion-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  main > section:nth-child(2) { animation-delay: 80ms; }
+  main > section:nth-child(3) { animation-delay: 150ms; }
+  main > section:nth-child(4) { animation-delay: 220ms; }
+  main > section:nth-child(5) { animation-delay: 290ms; }
+  main > section:nth-child(6) { animation-delay: 360ms; }
+
+  .network {
+    animation: network-drift 18s ease-in-out infinite alternate;
+  }
+
+  .hero-orb {
+    animation: orb-float 7s ease-in-out infinite alternate;
+  }
+
+  .hero-orb.orb-two {
+    animation-delay: -2.5s;
+  }
+
+  .dark-button,
+  .light-button,
+  .gold-button,
+  .visit-button {
+    transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease;
+  }
+
+  .dark-button:hover,
+  .light-button:hover,
+  .gold-button:hover,
+  .visit-button:hover {
+    transform: translateY(-3px);
+  }
+
+  .story-card,
+  .offering-card,
+  .data-cards article,
+  .flow-steps article,
+  .training-tracks article,
+  .why-cards article,
+  .bird-cards article,
+  .future-cards article,
+  .approach-grid article {
+    transition: transform 260ms ease, box-shadow 260ms ease;
+  }
+
+  .story-card:hover,
+  .offering-card:hover,
+  .data-cards article:hover,
+  .flow-steps article:hover,
+  .training-tracks article:hover,
+  .why-cards article:hover,
+  .bird-cards article:hover,
+  .future-cards article:hover,
+  .approach-grid article:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 28px rgba(21, 101, 192, 0.16);
+  }
+}
+
+@keyframes section-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes network-drift {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 42px 28px, -36px 24px; }
+}
+
+@keyframes orb-float {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to { transform: translate3d(14px, -18px, 0) scale(1.08); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main > section.motion-section {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Blue visual system: keep the site bright and colorful instead of white-heavy. */
+:root {
+  --blue-950: #071a3d;
+  --blue-900: #0b2d63;
+  --blue-700: #1565c0;
+  --blue-500: #3188ed;
+  --blue-200: #b9dcff;
+  --blue-50: #edf7ff;
+}
+
+body {
+  background: var(--blue-50);
+}
+
+.site-header {
+  background: rgba(7, 26, 61, 0.96);
+  border-bottom-color: rgba(143, 202, 255, 0.25);
+}
+
+.site-header nav a,
+.header-contact {
+  color: #d9edff;
+}
+
+.site-header nav a:before {
+  color: #8bc8ff;
+}
+
+.site-header nav a.active,
+.header-contact.active {
+  background: linear-gradient(135deg, #3188ed, #1565c0);
+}
+
+.site-footer {
+  background: linear-gradient(145deg, #071a3d, #0b438c 68%, #2d8be8);
+  color: #c8e5ff;
+}
+
+.footer-links b,
+.footer-links span,
+.footer-links a,
+.copyright {
+  color: #4284e7;
+}
+
+.footer-art { color: #73bcff; }
+
+.home-page,
+.about-page,
+.contact-page,
+.products-page,
+.services-page,
+.training-page,
+.impact-page {
+  background: linear-gradient(180deg, #eaf6ff 0%, #f8fcff 45%, #dceeff 100%);
+}
+
+.home-page .trusted,
+.home-page .stories,
+.home-page .industries,
+.home-page .final-cta,
+.about-page .foundation,
+.about-page .approach,
+.contact-page .contact-cta,
+.products-page .powered,
+.products-page .hireko,
+.services-page .philosophy,
+.services-page .core-services,
+.training-page .training-intro,
+.training-page .training-cta,
+.impact-page .impact-intro,
+.impact-page .impact-cta {
+  background: linear-gradient(135deg, #f5fbff, #dceeff 52%, #b8d9fa);
+}
+
+.home-page .stories,
+.about-page .journey,
+.products-page .socialbirds,
+.products-page .future,
+.services-page .partner-proof,
+.training-page .training-tracks,
+.impact-page .impact-flow {
+  background: linear-gradient(135deg, #e9f6ff, #a9d2f7 58%, #438bd0);
+}
+
+.hero-copy,
+.ai-services,
+.careers,
+.why-training,
+.ai-data {
+  background: linear-gradient(135deg, #0a2858, #1265bd 58%, #43a4f4) !important;
+}
+
+.dark-button { background: var(--blue-950); }
+.light-button { background: #e5f3ff; color: var(--blue-900); box-shadow: 0 5px 15px rgba(13, 71, 161, .2); }
+.gold-button,
+.services-cta .gold-button,
+.products-cta .gold-button,
+.impact-cta .gold-button,
+.training-cta .gold-button { background: #1565c0; }
+
+.message-form,
+.offering-card,
+.story-card,
+.milestone,
+.bird-cards article,
+.future-cards article,
+.training-tracks article,
+.why-cards article,
+.flow-steps article {
+  background: rgba(240, 249, 255, .9);
+  border: 1px solid rgba(65, 145, 219, .2);
+}
+
+/* More expressive blue treatment */
+.home-page,
+.about-page,
+.contact-page,
+.products-page,
+.services-page,
+.training-page,
+.impact-page {
+  background-color: #d9efff;
+  background-image:
+    radial-gradient(circle at 8% 12%, rgba(83, 190, 255, .3), transparent 24%),
+    radial-gradient(circle at 92% 38%, rgba(61, 117, 235, .25), transparent 25%),
+    linear-gradient(145deg, #eaf9ff 0%, #b9dcff 46%, #7daee8 100%);
+}
+
+.site-header {
+  background: linear-gradient(110deg, #041534, #0b3d87 62%, #087ebd);
+  box-shadow: 0 5px 22px rgba(4, 31, 78, .25);
+}
+
+.site-footer {
+  background:
+    radial-gradient(circle at 75% 20%, rgba(73, 185, 255, .35), transparent 25%),
+    linear-gradient(145deg, #03112f, #0a397d 60%, #087ebd);
+}
+
+.home-page .trusted,
+.home-page .stories,
+.home-page .industries,
+.home-page .final-cta,
+.about-page .foundation,
+.about-page .approach,
+.contact-page .contact-cta,
+.products-page .powered,
+.products-page .hireko,
+.services-page .philosophy,
+.services-page .core-services,
+.training-page .training-intro,
+.training-page .training-cta,
+.impact-page .impact-intro,
+.impact-page .impact-cta {
+  background: rgba(240, 250, 255, .62);
+  backdrop-filter: blur(4px);
+}
+
+.home-page .stories,
+.about-page .journey,
+.products-page .socialbirds,
+.products-page .future,
+.services-page .partner-proof,
+.training-page .training-tracks,
+.impact-page .impact-flow {
+  background:
+    linear-gradient(120deg, rgba(232, 249, 255, .92), rgba(93, 176, 240, .7) 58%, rgba(23, 87, 173, .9));
+}
+
+.home-page .stories h2,
+.home-page .industries h2,
+.about-page h2 em,
+.contact-page h2 em,
+.products-page h2 em,
+.services-page h2 em,
+.training-page h2 em,
+.impact-page h2 em {
+  color: #0756b5;
+}
+
+.story-card,
+.offering-card,
+.message-form,
+.contact-details article,
+.milestone,
+.bird-cards article,
+.future-cards article,
+.training-tracks article,
+.why-cards article,
+.flow-steps article,
+.approach-grid article {
+  background: linear-gradient(145deg, rgba(255,255,255,.92), rgba(216,241,255,.82));
+  box-shadow: 0 12px 28px rgba(18, 76, 145, .16);
+}
+
+.products-page .products-hero,
+.services-page .services-hero,
+.training-page .training-hero,
+.impact-page .impact-hero,
+.about-page .about-hero,
+.contact-page .contact-hero {
+  background: linear-gradient(120deg, #041536, #0b4b9a 58%, #09a1d1) !important;
+}
+
+.products-page .products-hero:before,
+.services-page .services-hero:before,
+.training-page .training-hero:before,
+.impact-page .impact-hero:before,
+.about-page .about-hero:before,
+.contact-page .contact-hero:before {
+  background: radial-gradient(circle at 18% 75%, rgba(51, 201, 255, .55), transparent 28%), radial-gradient(circle at 82% 15%, rgba(81, 111, 255, .5), transparent 30%);
+}
+
+.gold-button,
+.services-cta .gold-button,
+.products-cta .gold-button,
+.impact-cta .gold-button,
+.training-cta .gold-button {
+  background: linear-gradient(135deg, #0756b5, #09a1d1);
+  box-shadow: 0 9px 20px rgba(7, 86, 181, .3);
+}
