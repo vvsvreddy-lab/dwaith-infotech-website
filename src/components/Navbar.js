@@ -6,7 +6,7 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import Logo from '../assets/logo.png';
+import LogoIcon from '../assets/logo-icon.png';
 import { keyframes } from '@mui/system';
 
 const shimmer = keyframes`0%{background-position:-200% center}100%{background-position:200% center}`;
@@ -70,27 +70,34 @@ export default function Navbar() {
                 '&:hover': { transform: 'scale(1.03)' },
               }}
             >
+              {/* Clean icon only - no background box */}
               <img
-                src={Logo}
-                style={{ height: '52px', objectFit: 'contain', pointerEvents: 'none' }}
-                alt="Dwaith Infotech Logo"
+                src={LogoIcon}
+                style={{ height: '52px', width: '52px', objectFit: 'contain', pointerEvents: 'none' }}
+                alt="Dwaith Icon"
               />
+              {/* Company name styled like Image 3 */}
               <Box sx={{ display: 'flex', flexDirection: 'column', lineHeight: 1, pointerEvents: 'none' }}>
                 <Typography sx={{
-                  fontFamily: '"Rajdhani", "Inter", sans-serif',
-                  fontWeight: 900, fontSize: '1.5rem', letterSpacing: '0.06em',
-                  background: `linear-gradient(135deg, ${DARK_ORANGE} 0%, ${ORANGE} 50%, #FFB74D 100%)`,
-                  backgroundClip: 'text', WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent', lineHeight: 1.1,
+                  fontFamily: '"Rajdhani", "Arial Black", sans-serif',
+                  fontWeight: 900, fontSize: '1.6rem', letterSpacing: '0.08em',
+                  color: '#0D1B4B', lineHeight: 1,
                 }}>
                   DWAITH
                 </Typography>
                 <Typography sx={{
-                  fontFamily: '"Inter", sans-serif', fontWeight: 600,
-                  fontSize: '0.62rem', letterSpacing: '0.2em',
-                  color: '#546e7a', textTransform: 'uppercase',
+                  fontFamily: '"Rajdhani", "Inter", sans-serif',
+                  fontWeight: 700, fontSize: '0.7rem', letterSpacing: '0.22em',
+                  color: ORANGE, textTransform: 'uppercase', lineHeight: 1.2,
                 }}>
-                  Infotech Inc
+                  INFOTECH INC
+                </Typography>
+                <Typography sx={{
+                  fontFamily: '"Inter", sans-serif', fontWeight: 400,
+                  fontSize: '0.48rem', letterSpacing: '0.18em',
+                  color: '#9E9E9E', textTransform: 'uppercase',
+                }}>
+                  TECHNOLOGY · INNOVATION · SOLUTIONS
                 </Typography>
               </Box>
             </Box>

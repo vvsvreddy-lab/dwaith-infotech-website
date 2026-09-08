@@ -5,7 +5,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import Logo from "../assets/logo.png";
+import LogoIcon from "../assets/logo-icon.png";
 import { keyframes } from "@mui/system";
 
 const ORANGE = "#FF8C00";
@@ -241,7 +241,7 @@ export default function Footer() {
           {/* Contact */}
           <Grid item xs={12} md={3}>
             <Box sx={{ display: "flex", alignItems: "center", gap: 1.5, mb: 2 }}>
-              <img src={Logo} style={{ height: "40px", objectFit: "contain" }} alt="Dwaith" />
+              <img src={LogoIcon} style={{ height: "40px", objectFit: "contain" }} alt="Dwaith" />
               <Box>
                 <Typography sx={{ fontFamily: '"Rajdhani", sans-serif', fontWeight: 900,
                   fontSize: "1.2rem",
