@@ -70,12 +70,18 @@ export default function Navbar() {
                 '&:hover': { transform: 'scale(1.03)' },
               }}
             >
-              {/* Clean icon only - no background box */}
-              <img
-                src={LogoIcon}
-                style={{ height: '52px', width: '52px', objectFit: 'contain', pointerEvents: 'none' }}
-                alt="Dwaith Icon"
-              />
+              {/* Logo icon with dark blue pill background */}
+              <Box sx={{
+                bgcolor: '#0D1B4B', borderRadius: '12px',
+                p: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                boxShadow: '0 2px 8px rgba(13,27,75,0.3)',
+              }}>
+                <img
+                  src={LogoIcon}
+                  style={{ height: '48px', width: '48px', objectFit: 'contain', pointerEvents: 'none' }}
+                  alt="Dwaith Icon"
+                />
+              </Box>
               {/* Company name styled like Image 3 */}
               <Box sx={{ display: 'flex', flexDirection: 'column', lineHeight: 1, pointerEvents: 'none' }}>
                 <Typography sx={{
